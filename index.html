@@ -3,28 +3,29 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Your Name • Portfolio</title>
+  <title>Shymir Floyd • Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <nav class="nav">
-    <a href="./">Home</a>
-    <a href="./projects.html">Projects</a>
-    <a href="./contact.html">Contact</a>
-    <button id="themeToggle" aria-label="Toggle theme">🌓</button>
-  </nav>
-
-  <header class="hero">
-    <img class="avatar" src="assets/avatar.png" alt="Your portrait" />
-    <h1>Hello, I’m <span id="studentName">Your Name</span></h1>
-    <p class="tagline">Web Design & Development Student</p>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="active" href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">About</a>
+      <button id="themeToggle" class="button small">Dark Mode</button>
+    </nav>
+    <div class="hero">
+      <h1>Shymir Floyd</h1>
+      <p>Welcome to my portfolio! I build reliable, user-friendly web apps with clean design and interactive features.</p>
+      <a class="button" href="projects.html">View projects</a>
+    </div>
   </header>
 
-  <section class="api">
-    <h2>API Demo</h2>
-    <p id="quote">Loading a quote via fetch()…</p>
-  </section>
+ 
 
+  <footer class="site-footer">
+    <p>© 2025 Shymir Floyd • Built with HTML, CSS, and JavaScript</p>
+  </footer>
   <script src="script.js"></script>
 </body>
 </html>
