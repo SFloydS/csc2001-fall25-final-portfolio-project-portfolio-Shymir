@@ -1,17 +1,148 @@
-:root { color-scheme: light dark; --w: 900px; }
-*{box-sizing:border-box} body{font:16px/1.6 system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0}
-.nav{display:flex;gap:12px;align-items:center;justify-content:center;padding:12px;border-bottom:1px solid #e5e5e5}
-.nav a{text-decoration:none;padding:6px 10px;border-radius:8px}
-.nav a.active,.nav a:hover{background:rgba(127,127,127,.15)}
-#themeToggle{margin-left:auto}
-.hero{max-width:var(--w);margin:24px auto;text-align:center;padding:24px}
-.avatar{width:120px;height:120px;border-radius:50%;object-fit:cover;display:block;margin:0 auto 12px}
-.tagline{opacity:.8}
-.grid{max-width:var(--w);margin:24px auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;padding:0 16px}
-.card{padding:16px;border:1px solid #e5e5e5;border-radius:12px;background:#fff}
-.stack{max-width:600px;margin:24px auto;padding:0 16px}
-form{display:grid;gap:12px}
-label{display:grid;gap:6px}
-input,textarea,button{font:inherit;padding:10px;border:1px solid #ccc;border-radius:8px}
-button{cursor:pointer}
-@media (prefers-color-scheme: dark){ .card{background:#111;border-color:#333} }
+:root {
+  --bg-gradient: linear-gradient(135deg, #1e3c72, #2a5298);
+  --surface: #ffffff;
+  --text: #222;
+  --muted: #555;
+  --accent: #ff6f61;
+  --danger: #e63946;
+  --success: #2a9d8f;
+  --shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+body.dark {
+  --bg-gradient: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  --surface: #1e1e1e;
+  --text: #f5f5f5;
+  --muted: #aaa;
+  --accent: #6cf;
+  --danger: #ff6b6b;
+  --success: #57d9a3;
+  --shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Poppins", system-ui, sans-serif;
+  background: var(--bg-gradient);
+  color: var(--text);
+  line-height: 1.6;
+  transition: background 0.4s, color 0.4s;
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem 2rem;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s, border-bottom 0.3s;
+}
+.nav a.active, .nav a:hover {
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+}
+.nav .button.small {
+  font-size: 0.8rem;
+  padding: 0.4rem 0.8rem;
+  margin-left: auto;
+}
+
+/* Hero section */
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #fff;
+}
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+.button {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+}
+
+/* Content */
+.content {
+  padding: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+.card {
+  background: var(--surface);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.2);
+}
+.stack { display: grid; gap: 1rem; }
+.row { display: flex; align-items: center; gap: 1rem; }
+
+input, textarea, button {
+  font: inherit;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+textarea { resize: vertical; }
+button {
+  cursor: pointer;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  transition: background 0.3s;
+}
+button:hover { background: #e85c50; }
+
+.note { color: var(--muted); font-size: 0.9rem; }
+
+/* Footer */
+.site-footer {
+  text-align: center;
+  padding: 2rem;
+  color: #fff;
+  font-size: 0.9rem;
+  background: rgba(0,0,0,0.2);
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .hero h1 { font-size: 2.2rem; }
+  .hero p { font-size: 1rem; }
+}
