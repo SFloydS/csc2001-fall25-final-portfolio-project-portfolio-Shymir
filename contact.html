@@ -5,16 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    @media (max-width: 800px) {
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
   <nav class="nav">
-    <a href="./">Home</a>
+    <a href="./index.html">Home</a>
     <a href="./projects.html">Projects</a>
     <a class="active" href="./contact.html">Contact</a>
   </nav>
 
-  <main class="stack">
-    <form id="contactForm">
+  <main class="stack contact-layout">
+    <!-- About Me Section -->
+    <section class="card stack">
+      <h1>About Me</h1>
+      <p>Hello! My name is <strong>Shymir Floyd</strong>.</p>
+      <p>This portfolio showcases my web development projects, including:</p>
+      <ul>
+        <li><strong>Random Facts:</strong> A fun app that fetches random facts from APIs.</li>
+        <li><strong>Weather:</strong> A practical app that shows live weather for any city.</li>
+      </ul>
+      <p>I enjoy building reliable, user-friendly apps with clean design and interactive features. Explore my projects to see more!</p>
+    </section>
+
+    <!-- Contact Form Section -->
+    <form id="contactForm" class="card stack">
+      <h2>Get in Touch</h2>
       <label>Name <input name="name" required></label>
       <label>Email <input name="email" type="email" required></label>
       <label>Message <textarea name="message" rows="5" required></textarea></label>
@@ -24,7 +50,6 @@
   </main>
 
   <script type="module">
-    // Example AJAX submit to a public echo service (or replace with Netlify Forms / SheetDB)
     const form = document.getElementById('contactForm');
     const status = document.getElementById('status');
     form.addEventListener('submit', async (e) => {
