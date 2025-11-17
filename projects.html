@@ -3,22 +3,32 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Projects</title>
+  <title>Projects • Shymir Floyd</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <nav class="nav">
-    <a href="./">Home</a>
-    <a class="active" href="./projects.html">Projects</a>
-    <a href="./contact.html">Contact</a>
+    <a href="index.html">Home</a>
+    <a class="active" href="projects.html">Projects</a>
+    <a href="contact.html">About</a>
+    <button id="themeToggle" class="button small">Dark Mode</button>
   </nav>
-  <main class="grid">
-    <!-- Example project card -->
-    <article class="card">
-      <h3>Project Title</h3>
-      <p>Short description. Tech: HTML, CSS, JS.</p>
-      <p><a href="#" target="_blank" rel="noopener">Live</a> · <a href="#" target="_blank" rel="noopener">Code</a></p>
-    </article>
+
+  <main class="content">
+    <h1>Projects</h1>
+    <section class="grid">
+      <article class="card">
+        <h2>Random Facts</h2>
+        <p>Fetches a random fact from a public API with graceful fallbacks.</p>
+        <a class="button" href="projects/facts.html">Open</a>
+      </article>
+      <article class="card">
+        <h2>Weather</h2>
+        <p>Converts a city name to coordinates and shows current weather.</p>
+        <a class="button" href="projects/weather.html">Open</a>
+      </article>
+    </section>
   </main>
+  <script src="script.js"></script>
 </body>
 </html>
